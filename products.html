@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - GhanaStore</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+    <!--Adding google fonts to the site-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!--Linking to bootsrap css format, icons for rating of products-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body>
+        <div class="container">
+            
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/logo.png"></a>
+                    </div>
+                            <nav>
+                                <ul id="MenuItems">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    
+                                    <li><a href="account.html">Account</a></li>
+                                </ul>
+                            </nav>
+                            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                            <!--Adding a menu Icon with class menu.icon-->
+                            <img src="images/menu.png" class="menu-icon"  onclick="menutoogle()">
+                </div>           
+        </div>
+
+    
+        
+            <!--Featured Products-->
+            <div class="small-container">
+            
+                <div class="row row-2">
+                    <h2>All Products</h2>
+                    <select>
+                        <option>Default Sorting</option>
+                        <option>Sort by Price</option>
+                        <option>Sort by Popularity</option>
+                        <option>Sort by Rating</option>
+                        <option>Sort by Sale</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <a href="product-1.html"><img src="images/product-1.jpg"></a>
+                        <h4>Red Printed T-Shirt</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <P>GHC 50.50</P>
+                    </div>
+                
+                    <div class="col-4">
+                        <a href="product-2.html"><img src="images/product-2.jpg"></a>
+                        <h4>Black Sport Shoe</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <P>GHC 80.00</P>
+                    </div>
+                    <div class="col-4">
+                        <a href="product-3.html"><img src="images/product-3.jpg"></a>
+                        <h4>Dar-Ash Sport Shoe</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <P>GHC 120.00</P>
+                    </div>
+                    <div class="col-4">
+                        <a href="product-4.html"><img src="images/product-4.jpg"></a>
+                        <h4>Puma Blue-Black T-Shirt</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <P>GHC 500.00</P>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="product-5.html"><img src="images/product-5.jpg"></a>
+                            <h4>Best Hrx Sneakers</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <P>GHC 50.50</P>
+                     </div>
+                       
+                        <div class="col-4">
+                            <a href="product-6.html"><img src="images/product-6.jpg"></a>
+                            <h4>Puma Black T-Shirt</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            
+                            <P>GHC 80.00</P>
+                        </div>
+                        <div class="col-4">
+                            <a href="product-7.html"><img src="images/product-7.jpg"></a>
+                            <h4>Hrx Socks Pack</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <P>GHC 120.00</P>
+                        </div>
+                        <div class="col-4">
+                            <a href="product-8.html"><img src="images/product-8.jpg"></a>
+                            <h4>Men Casual Watch</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <P>GHC 500.00</P>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="product-9.html"><img src="images/product-9.jpg"></a>
+                                <h4>Modaine Casual Watch</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <P>GHC 50.50</P>
+                            </div>
+                           
+                            <div class="col-4">
+                                <a href="product-10.html"><img src="images/product-10.jpg"></a>
+                                <h4>Hrx Black & Red</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                                <P>GHC 80.00</P>
+                            </div>
+                            <div class="col-4">
+                                <a href="product-11.html"><img src="images/product-11.jpg"></a>
+                                <h4>Hrx Grey Sneakers</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                                <P>GHC 120.00</P>
+                            </div>
+                            <div class="col-4">
+                                <a href="product-12.html"><img src="images/product-12.jpg"></a>
+                                <h4>Nike Sportswear Pants</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <P>GHC 500.00</P>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+            <div class="page-btn">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>&#8594;</span>
+            </div>
+            </div>
+            
+        <!-----------------------Footer--------------------->
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                            <div class="footer-col-1">
+                            <h3>Download our App</h3>
+                            <p>Download App for Andriod Phones</p>
+                            <div class="app-logo">
+                                <img src="images/play-store.png">
+                            </div>
+                            </div>
+
+                            <div class="footer-col-2">
+                                <img src="images/logo-white.png">
+                                <p>Our Purpose is to sustainablilty. Make the pleasure and benefits
+                                    of sports accessible to the many</p>
+                            </div>
+
+                            <div class="footer-col-3">
+                                <h3>Useful Links</h3>
+                                <ul>
+                                    <li>Coupons</li>
+                                    <li>Blog Post</li>
+                                    <li>Return Policy</li>
+                                    <li>Join Affiliate</li>
+                                </ul>
+                            
+                            </div>
+
+                            <div class="footer-col-4">
+                            <h3>Follow Developer</h3>
+                            <ul>
+                                <a href="https://web.facebook.com/reubenhale45" target="blank"><li>Facebook</li></a>
+                                <a href="https://www.sololearn.com/Profile/18797204" target="blank"><li>Sololearn</li></a>
+                                <a href="https://www.instagram.com/reuben4hale/" target="blank"><li>Instagram</li></a>
+                                <li><a href="https://www.youtube.com/channel/UC0OpdEavzDmrJa-5jrloSww?" target="blank"> Youtube</a></li>
+                            </ul>
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="Copyright">&copy;Copyright 2020 <br/>Project Work by Reuben</p>
+            </div>
+            </div>
+
+
+            <!-----------------------Javascript for toogle menu------------------------>
+            <script>
+                var MenuItems = document.getElementById("MenuItems");
+
+                MenuItems.style.maxHeight = "0px";
+
+                function menutoogle(){
+                    if(MenuItems.style.maxHeight == "0px")
+                    {
+                        MenuItems.style.maxHeight = "200px";
+                    }
+                    else
+                    {
+                        MenuItems.style.maxHeight = "0px";
+                    }
+                }
+            </script>
+    </body>
+</html>
