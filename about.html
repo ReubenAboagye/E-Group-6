@@ -141,7 +141,7 @@
                   </p>
                   <p>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
+                    <input type="text" id="phoneNumber" name="phoneNumber" required />
                   </p>
                   <p>
                     <button type="submit">Send</button>
@@ -249,13 +249,14 @@ const myRegisteredHubtelNumber = process.env.REACT_APP_HUBTEL_PHONE_NUMBER;
 
 const smsForm = document.getElementById('smsForm');
 smsForm.addEventListener('submit', function(e) {
-  e.preventDefault();
+  e.preventDefault(); // Prevent default form submission
 
   const phoneNumber = document.getElementById('phoneNumber').value;
   const message = document.getElementById('message').value;
 
   sendSms(phoneNumber, message);
 });
+
 
 function sendSms(phoneNumber, message) {
   const encodedMessage = encodeURIComponent(message);
@@ -268,9 +269,7 @@ function sendSms(phoneNumber, message) {
                &content=${encodedMessage}`;
 
   fetch(url)
-    .then(response => response.text())
-    .then(text => console.log(text)) // For debugging purposes (remove in production)
-    .catch(error => {
+     .catch(error => {
       console.error('Error:', error);
       alert('Error sending SMS: ' + error.message);
     });
