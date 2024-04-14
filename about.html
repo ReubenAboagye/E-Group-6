@@ -132,6 +132,22 @@
                     </div>
                     </div>  </td>
             </tr>
+
+            <form name="contact" netlify>
+                <div class="contact-form">
+                  <p>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                  </p>
+                  <p>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                  </p>
+                  <p>
+                    <button type="submit">Send</button>
+                  </p>
+                </div>
+              </form><br><br><br>
         </table>
 </div>
 
@@ -204,7 +220,7 @@
                   </div>
               </div>
               <hr>
-              <p class="Copyright">&copy;Copyright 2020 <br/>Project Work by Reuben</p>
+              <p class="Copyright">&copy;Copyright 2020 <br/>Project Work by Group 6, E Class</p>
           </div>
         </div>
 
@@ -225,6 +241,41 @@
                     MenuItems.style.maxHeight = "0px";
                 }
             }
+
+            // Replace with your project's environment variable names
+const hubtelClientId = process.env.REACT_APP_HUBTEL_CLIENT_ID;
+const hubtelClientSecret = process.env.REACT_APP_HUBTEL_CLIENT_SECRET;
+const myRegisteredHubtelNumber = process.env.REACT_APP_HUBTEL_PHONE_NUMBER;
+
+const smsForm = document.getElementById('smsForm');
+smsForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const phoneNumber = document.getElementById('phoneNumber').value;
+  const message = document.getElementById('message').value;
+
+  sendSms(phoneNumber, message);
+});
+
+function sendSms(phoneNumber, message) {
+  const encodedMessage = encodeURIComponent(message);
+
+  // Construct URL with query parameters using template literals (more secure)
+  const url = `https://smsc.hubtel.com/v1/messages/send?clientid=${hubtelClientId}
+               &clientsecret=${hubtelClientSecret}
+               &from=${myRegisteredHubtelNumber}
+               &to=${phoneNumber}
+               &content=${encodedMessage}`;
+
+  fetch(url)
+    .then(response => response.text())
+    .then(text => console.log(text)) // For debugging purposes (remove in production)
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Error sending SMS: ' + error.message);
+    });
+}
+
         </script>
 </body>
 </html>

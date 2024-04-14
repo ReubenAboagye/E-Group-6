@@ -1,135 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart - GhanaStore</title>
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png"></a>
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="account.html">Account</a></li>
-                </ul>
-            </nav>
-            <button class="btn" onclick="clearCart()">Clear Cart</button>
-            <img src="images/menu.png" class="menu-icon" onclick="menutoogle()">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+        <button class="btn" onclick="clearCart()">Clear Cart</button>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoogle()" />
+      </div>
+
+      <!-- cart items details -->
+      <div class="small-container cart-page">
+        <table id="cartTable">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </table>
+
+        <div class="total-price">
+          <table>
+            <tr>
+              <td>Subtotal</td>
+              <td id="subtotal">GHC 0.00</td>
+            </tr>
+            <tr>
+              <td>Tax</td>
+              <td>GHC 9.50</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td id="total">GHC 9.50</td>
+            </tr>
+          </table>
         </div>
 
-        <!-- cart items details -->
-        <div class="small-container cart-page">
-            <table id="cartTable">
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
-                </tr>
-            </table>
-            
-            <div class="total-price">
-                <table>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td id="subtotal">GHC 0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Tax</td>
-                        <td>GHC 9.50</td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td id="total">GHC 9.50</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <button class="btn" onclick="checkout()">Checkout</button>
-        </div>
+        <button class="btn" onclick="checkout()">Checkout</button>
+      </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col-1">
-                        <h3>Download our App</h3>
-                        <p>Download App for Android Phones</p>
-                        <div class="app-logo">
-                            <img src="images/play-store.png">
-                        </div>
-                    </div>
-                    <div class="footer-col-2">
-                        <a href="index.html"><img src="images/logo-white.png"></a>
-                        <p>Our Purpose is to sustainability. Make the pleasure and benefits of sports accessible to many.</p>
-                    </div>
-                    <div class="footer-col-3">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li>Coupons</li>
-                            <li>Blog Post</li>
-                            <li>Return Policy</li>
-                            <li>Join Affiliate</li>
-                        </ul>
-                    </div>
-                    <div class="footer-col-4">
-                        <h3>Follow Developer</h3>
-                        <ul>
-                            <a href="https://web.facebook.com/reubenhale45" target="_blank"><li>Facebook</li></a>
-                            <a href="https://www.sololearn.com/Profile/18797204" target="_blank"><li>Sololearn</li></a>
-                            <a href="https://www.instagram.com/reuben4hale/" target="_blank"><li>Instagram</li></a>
-                            <li><a href="https://www.youtube.com/channel/UC0OpdEavzDmrJa-5jrloSww?" target="_blank">Youtube</a></li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- Footer -->
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col-1">
+              <h3>Download our App</h3>
+              <p>Download App for Android Phones</p>
+              <div class="app-logo">
+                <img src="images/play-store.png" />
+              </div>
             </div>
-            <hr>
-            <p class="Copyright">&copy;Copyright 2020<br/> Project Work by Reuben</p>
+            <div class="footer-col-2">
+              <a href="index.html"><img src="images/logo-white.png" /></a>
+              <p>
+                Our Purpose is to sustainability. Make the pleasure and benefits
+                of sports accessible to many.
+              </p>
+            </div>
+            <div class="footer-col-3">
+              <h3>Useful Links</h3>
+              <ul>
+                <li>Coupons</li>
+                <li>Blog Post</li>
+                <li>Return Policy</li>
+                <li>Join Affiliate</li>
+              </ul>
+            </div>
+            <div class="footer-col-4">
+              <h3>Follow Developer</h3>
+              <ul>
+                <a href="https://web.facebook.com/reubenhale45" target="_blank"
+                  ><li>Facebook</li></a
+                >
+                <a
+                  href="https://www.sololearn.com/Profile/18797204"
+                  target="_blank"
+                  ><li>Sololearn</li></a
+                >
+                <a href="https://www.instagram.com/reuben4hale/" target="_blank"
+                  ><li>Instagram</li></a
+                >
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UC0OpdEavzDmrJa-5jrloSww?"
+                    target="_blank"
+                    >Youtube</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <hr />
+        <p class="Copyright">
+          &copy;Copyright 2024<br />
+          Project Work by Group 6, E Class
+        </p>
+      </div>
     </div>
 
     <!-- Javascript for toggle menu and cart functionality -->
     <script>
-        var MenuItems = document.getElementById("MenuItems");
-        MenuItems.style.maxHeight = "0px";
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
 
-        function menutoogle() {
-            if(MenuItems.style.maxHeight == "0px") {
-                MenuItems.style.maxHeight = "200px";
-            } else {
-                MenuItems.style.maxHeight = "0px";
-            }
+      function menutoogle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
         }
+      }
 
-        // Function to get cart items from localStorage
-        function getCartItems() {
-            return JSON.parse(localStorage.getItem("cart")) || [];
-        }
+      // Function to get cart items from localStorage
+      function getCartItems() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
 
-        // Function to save cart items to localStorage
-        function saveCartItems(cartItems) {
-            localStorage.setItem("cart", JSON.stringify(cartItems));
-        }
+      // Function to save cart items to localStorage
+      function saveCartItems(cartItems) {
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+      }
 
-        // Function to update cart display
-        function updateCartDisplay() {
-            const cartItems = getCartItems();
-            const table = document.getElementById("cartTable");
-            const subtotalElement = document.getElementById("subtotal");
-            let subtotal = 0;
+      // Function to update cart display
+      function updateCartDisplay() {
+        const cartItems = getCartItems();
+        const table = document.getElementById("cartTable");
+        const subtotalElement = document.getElementById("subtotal");
+        let subtotal = 0;
 
-            // Clear current table content
-            table.innerHTML = `
+        // Clear current table content
+        table.innerHTML = `
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
@@ -138,94 +164,98 @@
                 </tr>
             `;
 
-            // Populate table with cart items
-            cartItems.forEach(item => {
-                const row = table.insertRow();
+        // Populate table with cart items
+        cartItems.forEach((item) => {
+          const row = table.insertRow();
 
-                const productCell = row.insertCell(0);
-                productCell.innerHTML = `
+          const productCell = row.insertCell(0);
+          productCell.innerHTML = `
                     <div class="cart-info">
                         <img src="${item.image}">
                         <div>
                             <p>${item.name}</p>
                             <small>GHC ${item.price.toFixed(2)}</small><br>
-                            <button onclick="removeItem('${item.id}')">remove</button>
+                            <button onclick="removeItem('${
+                              item.id
+                            }')">remove</button>
                         </div>
                     </div>
                 `;
 
-                const quantityCell = row.insertCell(1);
-                quantityCell.innerHTML = `<input type="number" value="${item.quantity}" onchange="updateQuantity('${item.id}', this.value)">`;
+          const quantityCell = row.insertCell(1);
+          quantityCell.innerHTML = `<input type="number" value="${item.quantity}" onchange="updateQuantity('${item.id}', this.value)">`;
 
-                const subtotalCell = row.insertCell(2);
-                const itemSubtotal = item.price * item.quantity;
-                subtotalCell.textContent = `GHC ${itemSubtotal.toFixed(2)}`;
+          const subtotalCell = row.insertCell(2);
+          const itemSubtotal = item.price * item.quantity;
+          subtotalCell.textContent = `GHC ${itemSubtotal.toFixed(2)}`;
 
-                const actionCell = row.insertCell(3);
-                actionCell.innerHTML = `<button onclick="removeItem('${item.id}')">remove</button>`;
+          const actionCell = row.insertCell(3);
+          actionCell.innerHTML = `<button onclick="removeItem('${item.id}')">remove</button>`;
 
-                subtotal += itemSubtotal;
-            });
+          subtotal += itemSubtotal;
+        });
 
-            // Update subtotal and total
-            subtotalElement.textContent = `GHC ${subtotal.toFixed(2)}`;
-            document.getElementById("total").textContent = `GHC ${(subtotal + 9.50).toFixed(2)}`;
+        // Update subtotal and total
+        subtotalElement.textContent = `GHC ${subtotal.toFixed(2)}`;
+        document.getElementById("total").textContent = `GHC ${(
+          subtotal + 9.5
+        ).toFixed(2)}`;
+      }
+
+      // Function to add item to cart
+      function addToCart(name, price, image) {
+        const cartItems = getCartItems();
+        const existingItem = cartItems.find((item) => item.name === name);
+
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          cartItems.push({
+            id: Date.now().toString(),
+            name,
+            price,
+            image,
+            quantity: 1,
+          });
         }
 
-        // Function to add item to cart
-        function addToCart(name, price, image) {
-            const cartItems = getCartItems();
-            const existingItem = cartItems.find(item => item.name === name);
+        saveCartItems(cartItems);
+        window.location.href = "cart.html"; // Redirect to cart page
+      }
 
-            if(existingItem) {
-                existingItem.quantity++;
-            } else {
-                cartItems.push({
-                    id: Date.now().toString(),
-                    name,
-                    price,
-                    image,
-                    quantity: 1
-                });
-            }
+      // Function to remove item from cart
+      function removeItem(id) {
+        const cartItems = getCartItems().filter((item) => item.id !== id);
+        saveCartItems(cartItems);
+        updateCartDisplay();
+      }
 
-            saveCartItems(cartItems);
-            window.location.href = "cart.html";  // Redirect to cart page
+      // Function to update quantity of item in cart
+      function updateQuantity(id, quantity) {
+        const cartItems = getCartItems();
+        const item = cartItems.find((item) => item.id === id);
+
+        if (item) {
+          item.quantity = parseInt(quantity);
         }
 
-        // Function to remove item from cart
-        function removeItem(id) {
-            const cartItems = getCartItems().filter(item => item.id !== id);
-            saveCartItems(cartItems);
-            updateCartDisplay();
-        }
+        saveCartItems(cartItems);
+        updateCartDisplay();
+      }
 
-        // Function to update quantity of item in cart
-        function updateQuantity(id, quantity) {
-            const cartItems = getCartItems();
-            const item = cartItems.find(item => item.id === id);
-            
-            if(item) {
-                item.quantity = parseInt(quantity);
-            }
+      // Function to clear the cart
+      function clearCart() {
+        localStorage.removeItem("cart");
+        updateCartDisplay();
+      }
 
-            saveCartItems(cartItems);
-            updateCartDisplay();
-        }
+      // Function to display checkout confirmation
+      function checkout() {
+        alert("Thank you for shopping with us!");
+      }
 
-        // Function to clear the cart
-        function clearCart() {
-            localStorage.removeItem('cart');
-            updateCartDisplay();
-        }
-
-        // Function to display checkout confirmation
-        function checkout() {
-            alert("Thank you for shopping with us!");
-        }
-
-        // Load cart items on page load
-        window.onload = updateCartDisplay;
+      // Load cart items on page load
+      window.onload = updateCartDisplay;
     </script>
-</body>
+  </body>
 </html>
