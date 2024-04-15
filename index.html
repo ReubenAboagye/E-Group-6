@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>300E Group 6</title>
+    <title>300E Group Members</title>
   </head>
   <body">
     <div id="title">
       <div id="heading">
-      <h1 id="class-title">ITE 300E</h1>
-      <h2 id="course">Web Development</h2>
-      <h4 id="group">Group 6</h4>
-      </div>
+      <h1 id="class-title"> ITE 300E </h1>
+      <h2>Web Development</h2>
+      <h2>Group Members</h3>
+    </div>
+     
       <table>
         <thead>
           <tr>
@@ -72,24 +73,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         min-width: 400px;
         max-width: 600px;
         justify-content: center;
+        text-align: center;
         }
 
       body {
         background-image: url(/images/bg-shoes.png );
-     
         display: flex;
         flex-direction: column;
         align-items: center;
         
       }
-      #heading{
-        background-color: #f7f6f6bf;
-        text-align: center;
-        border-radius: 29px;
-      }
+      
    
       /* Add border lines for the table */
       table {
@@ -129,9 +127,11 @@
         color: blue;
       }
 
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
     body {
       display: flex;
+      flex-direction: column;
+      align-items: center;
     background-size: auto;
     }
   }
