@@ -1,4 +1,3 @@
-// netlify/functions/send-sms.js
 const axios = require("axios");
 
 exports.handler = async function (event, context) {
@@ -6,11 +5,17 @@ exports.handler = async function (event, context) {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
+  // Check for empty or invalid request body
+  if (!event.body || typeof event.body !== "string") {
+    return { statusCode: 400, body: "Invalid request body" };
+  }
+
   let data;
 
   try {
     data = JSON.parse(event.body);
   } catch (error) {
+    console.error("Error parsing JSON:", error);
     return { statusCode: 400, body: "Invalid JSON format" };
   }
 
@@ -42,6 +47,7 @@ exports.handler = async function (event, context) {
     );
     return { statusCode: 200, body: "SMS sent!" };
   } catch (error) {
+    console.error("Error sending SMS:", error);
     return { statusCode: 500, body: "Error sending SMS" };
   }
 };
