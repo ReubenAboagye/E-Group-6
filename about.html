@@ -145,13 +145,14 @@
                   </p>
                   <p>
                     <label for="phoneNumber">Your Phone Number</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="We wont store your number" style="max-width: 300px;"/>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="We won't store your number" style="max-width: 300px;" />
                   </p>
                   <p>
                     <button type="submit">Send</button>
                   </p>
                 </div>
               </form>
+              
               <br><br><br>
            
         </div>
@@ -248,38 +249,53 @@
                 }
             }
 
-            // Replace with your project's environment variable names
-const hubtelClientId = process.env.REACT_APP_HUBTEL_CLIENT_ID;
-const hubtelClientSecret = process.env.REACT_APP_HUBTEL_CLIENT_SECRET;
-const myRegisteredHubtelNumber = process.env.REACT_APP_HUBTEL_PHONE_NUMBER;
+            const axios = require("axios");
 
-const smsForm = document.getElementById('smsForm');
-smsForm.addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent default form submission
+exports.handler = async function (event, context) {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
 
-  const phoneNumber = document.getElementById('phoneNumber').value;
-  const message = document.getElementById('message').value;
+  // Extract data from request body (assuming valid JSON)
+  const { name, phoneNumber } = JSON.parse(event.body);
 
-  sendSms(phoneNumber, message);
-});
+  // Replace with your Hubtel credentials (store securely using environment variables)
+  const hubtelClientId = process.env.REACT_HUBTEL_CLIENT_ID;
+  const hubtelClientSecret = process.env.REACT_HUBTEL_CLIENT_SECRET;
+  const myRegisteredHubtelNumber = process.env.REACT_HUBTEL_NUMBER;
 
+  // Construct message content
+  const message = `Hello ${name}, thank you for contacting us!`;
 
-function sendSms(phoneNumber, message) {
-  const encodedMessage = encodeURIComponent(message);
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${Buffer.from(
+        `${hubtelClientId}:${hubtelClientSecret}`
+      ).toString("base64")}`,
+    },
+  };
 
-  // Construct URL with query parameters using template literals (more secure)
-  const url = `https://smsc.hubtel.com/v1/messages/send?clientid=${hubtelClientId}
-               &clientsecret=${hubtelClientSecret}
-               &from=${myRegisteredHubtelNumber}
-               &to=${phoneNumber}
-               &content=${encodedMessage}`;
+  const smsData = {
+    From: myRegisteredHubtelNumber,
+    To: phoneNumber,
+    Content: message,
+    RegisteredDelivery: true,
+  };
 
-  fetch(url)
-     .catch(error => {
-      console.error('Error:', error);
-      alert('Error sending SMS: ' + error.message);
-    });
-}
+  try {
+    const response = await axios.post(
+      "https://api.hubtel.com/v1/messages",
+      smsData,
+      config
+    );
+    return { statusCode: 200, body: "SMS sent!" };
+  } catch (error) {
+    console.error("Error sending SMS:", error);
+    return { statusCode: 500, body: "Error sending SMS" };
+  }
+};
+
 
         </script>
 </body>
