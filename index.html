@@ -4,90 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>300E Group Members</title>
-  </head>
-  <body">
-    <div id="title">
-      <div id="heading">
-      <h1 id="class-title"> ITE 300E </h1>
-      <h2>Web Development</h2>
-      <h2>Group Members</h3>
-    </div>
-     
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Index No.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Damoah Ethel Yaa Asamoah</td>
-            <td>5211040479</td>
-          </tr>
-          <tr>
-            <td>Owusu Antwi Assah</td>
-            <td>5211040480</td>
-          </tr>
-          <tr>
-            <td>Akwasi Aboagye Reuben</td>
-            <td>5211040451</td>
-          </tr>
-          <tr>
-            <td>Abberteh Kofi Banafo</td>
-            <td>5211040456</td>
-          </tr>
-          <tr>
-            <td>Issah Emmanuel</td>
-            <td>5211040448</td>
-          </tr>
-          <!-- <tr>
-            <td>Nkunim Isaac</td>
-            <td>5211040470</td>
-          </tr>
-          
-          <tr>
-            <td>Aaron Adjei</td>
-            <td>5211040426</td>
-          </tr>
-          <tr> -->
-            <td>Asamoah Boadu Casey</td>
-            <td>5211040485</td>
-          </tr>
-            <tr>
-              <td>Kyerewaa Doffour Lydia</td>
-              <td>5211040408</td>
-            </tr>
-          <!-- <tr>
-            <td>Afriyie Sarpong</td>
-            <td>5211040408</td>
-          </tr> -->
-        </tbody>
-      </table>
-      <a class="shop" href="shop.html">Shop Now</a>
-    </div>
-
     <style>
       
-      #title {
+      .title {
+        margin-left: 40%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items:flex-end;
         justify-content: center;
         min-width: 400px;
         max-width: 600px;
-        justify-content: center;
         text-align: center;
         }
 
       body {
         background-image: url(/images/bg-shoes.png );
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+
         
       }
-      
+      .heading{       
+        margin-right: 9em;
+        font-weight: bold;
+        
+      }
+      .class-title{
+        font-size: 3em;
+      }
+      h2{
+        font-size: 2em;
+      }
    
       /* Add border lines for the table */
       table {
@@ -99,10 +50,15 @@
       /* Add border to table cells */
       th,
       td {
-        font-size: large;
+        font-size: 1.5em;
         border: 1px solid black;
-        padding: 18px;
+        padding: 10px 18px;
         text-align: left;
+        
+      }
+      th{
+        font-size: 2em;
+        font-weight: bold;
       }
 
       /* Change the background color of a row when mouse hovers over it */
@@ -123,18 +79,119 @@
         border: none;
         border-radius: 8px;
       }
-      #shop{
-        color: blue;
+      .shop{
+        color: white;
+        font-size: 30px;
+        margin-top: 1em;
+      }
+      .shop:hover{
+        opacity: 0.9;
       }
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 540px) {
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-    background-size: auto;
+      background-size: auto;
+      overflow-x: hidden;
+     
     }
+    .title{
+      margin: 0 1em 0 0;
+      
+    }
+    td {
+        font-size: 1em;
+     
+        
+      }
+      th{
+        font-size: 1.2em;
+      
+      }
+      .title {
+        
+        max-width: 600px;
+        
+        }
+        .class-title,h2{
+          margin-left: 20%;
+          font-size: 1.2em;
+        }
+        h2{
+        font-size: 1em;
+        color: white;
+        background-color: #ff523b;
+        border-radius: 3px;
+      }
+        
   }
     </style>
+  </head>
+  <body">
+    <div class="title">
+      <div class="heading">
+        <h1 class="class-title"> ITE 300E </h1>
+        <h2>Web Development</h2>
+        <h2>Group 6 Members</h3>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Index No.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Damoah Ethel Yaa Asamoah</td>
+              <td>5211040479</td>
+            </tr>
+            <tr>
+              <td>Owusu Antwi Assah</td>
+              <td>5211040480</td>
+            </tr>
+            <tr>
+              <td>Akwasi Aboagye Reuben</td>
+              <td>5211040451</td>
+            </tr>
+            <tr>
+              <td>Abberteh Kofi Banafo</td>
+              <td>5211040456</td>
+            </tr>
+            <tr>
+              <td>Issah Emmanuel</td>
+              <td>5211040448</td>
+            </tr>
+            <tr>
+              <td>Nkunim Isaac</td>
+              <td>5211040470</td>
+            </tr>
+            
+            <tr>
+              <td>Aaron Adjei</td>
+              <td>5211040426</td>
+            </tr>
+            <tr>
+              <td>Asamoah Boadu Casey</td>
+              <td>5211040485</td>
+            </tr>
+              <tr>
+                <td>Kyerewaa Doffour Lydia</td>
+                <td>5211040408</td>
+              </tr>
+            <!-- <tr>
+              <td>Afriyie Sarpong</td>
+              <td>5211040408</td>
+            </tr> -->
+          </tbody>
+        </table>
+        <a class="shop" href="shop.html">Shop Now</a>
+      </div>
+    </div>
+
+    
   </body>
 </html>
