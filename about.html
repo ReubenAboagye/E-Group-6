@@ -247,8 +247,8 @@
               
 
             //sendin SMS
-            var hubtel_API_Key = 'pxmdiojz';
-        var hubteL_API_SECRET = 'lzhiddpu';
+            var hubtel_API_Key = process.env.REACT_HUBTEL_CLIENT_ID;
+        var hubteL_API_SECRET = process.env.REACT_HUBTEL_CLIENT_SECRET;
         var myRegisteredHubtelNumber = '0596114755';
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
