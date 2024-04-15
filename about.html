@@ -137,19 +137,14 @@
         </table>
         <div>
             <h3 style="text-align: left;">Via SMS <br>  </h3>
-            <form name="contact" action="" method="POST" id="contactForm">
-                <div class="contact-form">
-                  <p>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required style="max-width: 300px;" />
-                  </p>
-                  <p>
-                    <label for="phoneNumber">Your Phone Number</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="We won't store your number" style="max-width: 300px;" />
-                  </p>
-                  <p>
-                    <button type="submit">Send</button>
-                  </p>
+            <form  id="contactForm">
+              <div  style="width: 250px;"> <label for="name">Name</label>
+                <input type="text" id="name" name="name" required style="max-width: 300px;" />
+              </div>
+              <div  style="width: 250px;"> <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="We won't store your number" style="max-width: 300px;" />
+                </div>  
+                <div style="width: 250px;"><input type="submit" value="Submit" style="background-color: #ff523b; color: white; font-weight: 200;">
                 </div>
               </form>
               
@@ -249,53 +244,46 @@
                     MenuItems.style.maxHeight = "0px";
                 }
             }
+              
 
-         
-            const hubtel_API_Key = process.env.REACT_APP_HUBTEL_API_KEY;
-const hubteL_API_SECRET = process.env.REACT_APP_HUBTEL_API_SECRET;
-const myRegisteredHubtelNumber = '0596114755'; // Assuming this doesn't need to be dynamic
+            //sendin SMS
+            var hubtel_API_Key = 'pxmdiojz';
+        var hubteL_API_SECRET = 'lzhiddpu';
+        var myRegisteredHubtelNumber = '0596114755';
 
-// Assuming you'll add a message input field later, remove this line if not
-var message; 
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var message = 'Hey '+ name+ "!, \nThank you for reaching Group 6 from E Class";
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+            sendSms(phoneNumber, message);
+        });
 
-  var phoneNumber = document.getElementById('phoneNumber').value;
-  var name = document.getElementById('name').value; // Assuming the name input field has id="name"
+        function sendSms(phoneNumber, message) {
+            // URL encode the message
+            var encodedMessage = encodeURIComponent(message);
 
-  // Craft the message based on name and message input (if available)
-  message = (name ? name + ', ' : '') + (message ? message : 'We have received your response!');
+            // Constructing the URL with query parameters
+            var url = 'https://smsc.hubtel.com/v1/messages/send' +
+                '?clientid=' + hubtel_API_Key +
+                '&clientsecret=' + hubteL_API_SECRET +
+                '&from=' + myRegisteredHubtelNumber +
+                '&to=' + phoneNumber +
+                '&content=' + encodedMessage;
 
-  sendSms(phoneNumber, message);
-});
-
-function sendSms(phoneNumber, message) {
-  // URL encode the message
-  var encodedMessage = encodeURIComponent(message);
-
-  // Constructing the URL with query parameters
-  var url = 'https://smsc.hubtel.com/v1/messages/send' +
-            '?clientid=' + hubtel_API_Key +
-            '&clientsecret=' + hubteL_API_SECRET +
-            '&from=' + myRegisteredHubtelNumber +
-            '&to=' + phoneNumber +
-            '&content=' + encodedMessage;
-
-  try {
-    // Making a GET request
-    fetch(url)
-      .then(response => response.text())
-      .then(text => console.log(text));
-    alert('SMS sent (assuming successful)');
-  } catch (e) {
-    console.log('Error: ' + e.toString());
-    alert('Error sending SMS: ' + e.toString());
-  }
-}
-
-
-
+            try {
+                // Making a GET request
+                fetch(url)
+                    .then(response => response.text())
+                    .then(text => console.log(text));
+                alert('SMS sent');
+            } catch (e) {
+                console.log('Error: ' + e.toString());
+                alert('Error sending SMS: ' + e.toString());
+            }
+        } 
+  
         </script>
 </body>
 </html>
