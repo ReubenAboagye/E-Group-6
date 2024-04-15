@@ -137,7 +137,7 @@
         </table>
         <div>
             <h3 style="text-align: left;">Via SMS <br>  </h3>
-            <form name="contact" action="/.netlify/functions/send-sms" method="POST">
+            <form name="contact" action="/.netlify/functions/send-sms" method="POST" id="contactForm">
                 <div class="contact-form">
                   <p>
                     <label for="name">Name</label>
@@ -152,6 +152,7 @@
                   </p>
                 </div>
               </form>
+              
               
               <br><br><br>
            
@@ -249,52 +250,27 @@
                 }
             }
 
-            const axios = require("axios");
 
-exports.handler = async function (event, context) {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
-  }
+            $(document).ready(function() {
+  $("#contactForm").submit(function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-  // Extract data from request body (assuming valid JSON)
-  const { name, phoneNumber } = JSON.parse(event.body);
+    const data = $(this).serializeJSON(); // Convert form data to JSON using jQuery
 
-  // Replace with your Hubtel credentials (store securely using environment variables)
-  const hubtelClientId = process.env.REACT_HUBTEL_CLIENT_ID;
-  const hubtelClientSecret = process.env.REACT_HUBTEL_CLIENT_SECRET;
-  const myRegisteredHubtelNumber = process.env.REACT_HUBTEL_NUMBER;
+    // Send the JSON data to your serverless function
+    fetch('/.netlify/functions/send-sms', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(text => console.log(text)) // Handle response (optional)
+    .catch(error => console.error(error)); // Handle errors
+  });
+});
 
-  // Construct message content
-  const message = `Hello ${name}, thank you for contacting us!`;
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${Buffer.from(
-        `${hubtelClientId}:${hubtelClientSecret}`
-      ).toString("base64")}`,
-    },
-  };
-
-  const smsData = {
-    From: myRegisteredHubtelNumber,
-    To: phoneNumber,
-    Content: message,
-    RegisteredDelivery: true,
-  };
-
-  try {
-    const response = await axios.post(
-      "https://api.hubtel.com/v1/messages",
-      smsData,
-      config
-    );
-    return { statusCode: 200, body: "SMS sent!" };
-  } catch (error) {
-    console.error("Error sending SMS:", error);
-    return { statusCode: 500, body: "Error sending SMS" };
-  }
-};
 
 
         </script>
