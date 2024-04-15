@@ -7,10 +7,11 @@
   </head>
   <body">
     <div id="title">
+      <div id="heading">
       <h1 id="class-title">ITE 300E</h1>
       <h2 id="course">Web Development</h2>
       <h4 id="group">Group 6</h4>
-
+      </div>
       <table>
         <thead>
           <tr>
@@ -48,12 +49,12 @@
             <td>5211040426</td>
           </tr>
           <tr> -->
-            <td>Asamoah Boadu Cassey</td>
+            <td>Asamoah Boadu Casey</td>
             <td>5211040485</td>
           </tr>
             <tr>
               <td>Kyerewaa Doffour Lydia</td>
-              <td>5211040490</td>
+              <td>5211040408</td>
             </tr>
           <!-- <tr>
             <td>Afriyie Sarpong</td>
@@ -70,27 +71,30 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* justify-content: center;
-        text-align: center;
-        min-width: 440px;
-        max-width: 500px; */
-      }
+        min-width: 400px;
+        max-width: 600px;
+        justify-content: center;
+        }
 
       body {
         background-image: url(/images/bg-shoes.png );
-        background-size: cover;
+     
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        
       }
-
+      #heading{
+        background-color: #f7f6f6bf;
+        text-align: center;
+        border-radius: 29px;
+      }
+   
       /* Add border lines for the table */
       table {
         border-collapse: collapse;
         width: 100%;
-        background-color: rgba(252, 253, 255, 0.997);
+        background-color: rgba(252, 253, 255, 0.897);
       }
 
       /* Add border to table cells */
@@ -107,6 +111,7 @@
         background-color: #f5f5f5;
       }
       .shop {
+        
         background-color: #ff523b;
         color: white;
         padding: 10px 20px;
@@ -119,11 +124,14 @@
         border: none;
         border-radius: 8px;
       }
+      #shop{
+        color: blue;
+      }
 
       @media screen and (max-width: 500px) {
     body {
       display: flex;
-      background-size: contain;
+    background-size: auto;
     }
   }
     </style>
