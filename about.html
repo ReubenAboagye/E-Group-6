@@ -137,7 +137,7 @@
         </table>
         <div>
             <h3 style="text-align: left;">Via SMS <br>  </h3>
-            <form name="contact" action="/.netlify/functions/send-sms" method="POST" id="contactForm">
+            <form name="contact" action="" method="POST" id="contactForm">
                 <div class="contact-form">
                   <p>
                     <label for="name">Name</label>
@@ -250,26 +250,49 @@
                 }
             }
 
+         
+            const hubtel_API_Key = process.env.REACT_APP_HUBTEL_API_KEY;
+const hubteL_API_SECRET = process.env.REACT_APP_HUBTEL_API_SECRET;
+const myRegisteredHubtelNumber = '0596114755'; // Assuming this doesn't need to be dynamic
 
-            $(document).ready(function() {
-  $("#contactForm").submit(function(event) {
-    event.preventDefault(); // Prevent default form submission
+// Assuming you'll add a message input field later, remove this line if not
+var message; 
 
-    const data = $(this).serializeJSON(); // Convert form data to JSON using jQuery
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-    // Send the JSON data to your serverless function
-    fetch('/.netlify/functions/send-sms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(text => console.log(text)) // Handle response (optional)
-    .catch(error => console.error(error)); // Handle errors
-  });
+  var phoneNumber = document.getElementById('phoneNumber').value;
+  var name = document.getElementById('name').value; // Assuming the name input field has id="name"
+
+  // Craft the message based on name and message input (if available)
+  message = (name ? name + ', ' : '') + (message ? message : 'We have received your response!');
+
+  sendSms(phoneNumber, message);
 });
+
+function sendSms(phoneNumber, message) {
+  // URL encode the message
+  var encodedMessage = encodeURIComponent(message);
+
+  // Constructing the URL with query parameters
+  var url = 'https://smsc.hubtel.com/v1/messages/send' +
+            '?clientid=' + hubtel_API_Key +
+            '&clientsecret=' + hubteL_API_SECRET +
+            '&from=' + myRegisteredHubtelNumber +
+            '&to=' + phoneNumber +
+            '&content=' + encodedMessage;
+
+  try {
+    // Making a GET request
+    fetch(url)
+      .then(response => response.text())
+      .then(text => console.log(text));
+    alert('SMS sent (assuming successful)');
+  } catch (e) {
+    console.log('Error: ' + e.toString());
+    alert('Error sending SMS: ' + e.toString());
+  }
+}
 
 
 
