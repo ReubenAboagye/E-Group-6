@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart - GhanaStore</title>
+    <title>Dar Ash Shoe || GhanaStore</title>
     <link rel="icon" href="images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -15,64 +15,160 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
+
   <body>
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <a href="shop.html"><img src="images/logo.png" /></a>
+          <a href="index.html"><img src="images/logo.png" /></a>
         </div>
         <nav>
           <ul id="MenuItems">
             <li><a href="shop.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="index.html">Group Members</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
-        <button class="btn" onclick="window.location.href='cart.html'">
-          <img src="images/cart.png" width="30px" height="30px" />
-        </button>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
         <img src="images/menu.png" class="menu-icon" onclick="menutoogle()" />
       </div>
 
-      <!-- cart items details -->
-      <div class="small-container cart-page">
-        <table id="cartTable">
-          <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th>Action</th>
-          </tr>
-        </table>
+      <div class="small-container single-product">
+        <div class="row">
+          <div class="col-2">
+            <img
+              src="images/product-3.jpg"
+              width="100%"
+              height="20%"
+              id="ProductImg"
+            />
+            <div class="small-img-row">
+              <div class="small-img-col">
+                <img
+                  src="images/product-3.jpg"
+                  width="100%"
+                  class="small-img"
+                  onclick="updateImage(this)"
+                />
+              </div>
+              <div class="small-img-col">
+                <img
+                  src="images/gallery-2.jpg"
+                  width="100%"
+                  class="small-img"
+                  onclick="updateImage(this)"
+                />
+              </div>
+              <div class="small-img-col">
+                <img
+                  src="images/gallery-3.jpg"
+                  width="100%"
+                  class="small-img"
+                  onclick="updateImage(this)"
+                />
+              </div>
+              <div class="small-img-col">
+                <img
+                  src="images/gallery-4.jpg"
+                  width="100%"
+                  class="small-img"
+                  onclick="updateImage(this)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <p>Home / Shoes</p>
+            <h1>Dar-Ash Shoe</h1>
+            <h4>GHC 120.00</h4>
+            <select>
+              <option>40</option>
+              <option>41</option>
+              <option>42</option>
+              <option>43</option>
+              <option>44</option>
+            </select>
+            <input type="number" value="1" min="1" id="productQuantity" />
+            <button
+              class="btn"
+              onclick="addToCart('product3', 'Dar-Ash Shoe', 120.00, 'images/product-3.jpg')"
+            >
+              Add to Cart
+            </button>
 
-        <div class="total-price">
-          <table>
-            <tr>
-              <td>Subtotal</td>
-              <td id="subtotal">GHC 0.00</td>
-            </tr>
-            <tr>
-              <td>Tax</td>
-              <td>GHC 9.50</td>
-            </tr>
-            <tr>
-              <td>Total</td>
-              <td id="total">GHC 9.50</td>
-            </tr>
-          </table>
+            <h3>Product Details <i class="fa fa-indent"></i></h3>
+            <br />
+            <p>
+              Get your Dar-Ash shoes from GhanaStore with amazing discounts and
+              win amazing offers with Free Shipping for customers in Greater
+              Kumasi
+            </p>
+          </div>
         </div>
-
-        <a
-          href=""
-          class="btn"
-          style="text-align: left; flex-wrap: flex; float: right"
-          >Checkout</a
-        >
       </div>
 
-      <!-- Footer -->
+      <div class="small-container">
+        <div class="row row-2"></div>
+        <h2>Related Products</h2>
+        <p>View More</p>
+      </div>
+
+      <div class="small-container">
+        <div class="row">
+          <div class="col-4">
+            <a href="product-1.html"><img src="images/product-1.jpg" /></a>
+            <h4>Brownish grey Printed T-Shirt</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p>GHC 50.50</p>
+          </div>
+          <div class="col-4">
+            <a href="product-2.html"><img src="images/product-2.jpg" /></a>
+            <h4>Black Sport Shoe</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>GHC 80.00</p>
+          </div>
+          <div class="col-4">
+            <a href="product-5.html"><img src="images/product-5.jpg" /></a>
+            <h4>Dar-Ash Sport Shoe</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>GHC 120.00</p>
+          </div>
+          <div class="col-4">
+            <a href="product-10.html"><img src="images/product-10.jpg" /></a>
+            <h4>Puma Blue-Black T-Shirt</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p>GHC 500.00</p>
+          </div>
+        </div>
+      </div>
+
       <div class="footer">
         <div class="container">
           <div class="row">
@@ -83,22 +179,25 @@
                 <img src="images/play-store.png" />
               </div>
             </div>
+
             <div class="footer-col-2">
-              <a href="shop.html"><img src="images/logo-white.png" /></a>
+              <img src="images/logo-white.png" />
               <p>
-                Our Purpose is to sustainablilty. Make the pleasure and benefits
+                Our Purpose is to sustainability. Make the pleasure and benefits
                 of sports accessible to the many
               </p>
             </div>
+
             <div class="footer-col-3">
               <h3>Useful Links</h3>
               <ul>
                 <li>Coupons</li>
-                <li>Learn at Havard Online</li>
-                <li>Paid Udemy Courses</li>
-                <li>Allison</li>
+                <li>Blog Post</li>
+                <li>Return Policy</li>
+                <li>Join Affiliate</li>
               </ul>
             </div>
+
             <div class="footer-col-4">
               <h3>Follow Developer</h3>
               <ul>
@@ -127,12 +226,12 @@
         </div>
         <hr />
         <p class="Copyright">
-          &copy;Copyright 2020 <br />Project Work by Group 6, E Class
+          &copy;Copyright 2020<br />
+          Project Work by Reuben
         </p>
       </div>
     </div>
 
-    <!-- Javascript for toggle menu -->
     <script>
       var MenuItems = document.getElementById("MenuItems");
       MenuItems.style.maxHeight = "0px";
@@ -144,118 +243,42 @@
           MenuItems.style.maxHeight = "0px";
         }
       }
-    </script>
 
-    <!-- Javascript for cart functionality -->
-    <script>
-      // Function to get cart items from localStorage
-      function getCartItems() {
-        return JSON.parse(localStorage.getItem("cart")) || [];
-      }
-
-      // Function to save cart items to localStorage
-      function saveCartItems(cartItems) {
-        localStorage.setItem("cart", JSON.stringify(cartItems));
-      }
-
-      // Function to update cart display
-      function updateCartDisplay() {
-        const cartItems = getCartItems();
-        const table = document.getElementById("cartTable");
-        const subtotalElement = document.getElementById("subtotal");
-        let subtotal = 0;
-
-        // Clear current table content
-        table.innerHTML = `
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
-                </tr>
-            `;
-
-        // Populate table with cart items
-        cartItems.forEach((item) => {
-          const row = table.insertRow();
-
-          const productCell = row.insertCell(0);
-          productCell.innerHTML = `
-                    <div class="cart-info">
-                        <img src="${item.image}">
-                        <div>
-                            <p>${item.name}</p>
-                            <small>GHC ${item.price.toFixed(2)}</small><br>
-                            <button onclick="removeItem('${
-                              item.id
-                            }')">remove</button>
-                        </div>
-                    </div>
-                `;
-
-          const quantityCell = row.insertCell(1);
-          quantityCell.innerHTML = `<input type="number" value="${item.quantity}" onchange="updateQuantity('${item.id}', this.value)">`;
-
-          const subtotalCell = row.insertCell(2);
-          const itemSubtotal = item.price * item.quantity;
-          subtotalCell.textContent = `GHC ${itemSubtotal.toFixed(2)}`;
-
-          const actionCell = row.insertCell(3);
-          actionCell.innerHTML = `<button onclick="removeItem('${item.id}')">remove</button>`;
-
-          subtotal += itemSubtotal;
-        });
-
-        // Update subtotal and total
-        subtotalElement.textContent = `GHC ${subtotal.toFixed(2)}`;
-        document.getElementById("total").textContent = `GHC ${(
-          subtotal + 9.5
-        ).toFixed(2)}`;
-      }
-
-      // Function to add item to cart
       function addToCart(id, name, price, image) {
+        const quantity = document.getElementById("productQuantity").value;
         const cartItems = getCartItems();
         const existingItem = cartItems.find((item) => item.id === id);
 
         if (existingItem) {
-          existingItem.quantity++;
+          existingItem.quantity += parseInt(quantity);
         } else {
           cartItems.push({
             id,
             name,
             price,
             image,
-            quantity: 1,
+            quantity: parseInt(quantity),
           });
         }
 
         saveCartItems(cartItems);
-        window.location.href = "cart.html"; // Redirect to cart page
+        window.location.href = "cart.html";
       }
 
-      // Function to remove item from cart
-      function removeItem(id) {
-        const cartItems = getCartItems().filter((item) => item.id !== id);
-        saveCartItems(cartItems);
-        updateCartDisplay();
+      function getCartItems() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
       }
 
-      // Function to update quantity of item in cart
-      function updateQuantity(id, quantity) {
-        const cartItems = getCartItems();
-        const item = cartItems.find((item) => item.id === id);
-
-        if (item) {
-          item.quantity = parseInt(quantity);
-        }
-
-        saveCartItems(cartItems);
-        updateCartDisplay();
+      function saveCartItems(cartItems) {
+        localStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
-      // Load cart items on page load
-      window.onload = updateCartDisplay;
+      var ProductImg = document.getElementById("ProductImg");
+      var SmallImg = document.getElementsByClassName("small-img");
+
+      function updateImage(element) {
+        ProductImg.src = element.src;
+      }
     </script>
   </body>
 </html>
